@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(114, 179, 84);
+    height: 100%;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    height: 120px;
+    background-color: darkblue;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    height: 80%;
+    justify-content: center;
+}
+
+.checker, .logo {
+    box-sizing: border-box;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.checker {
+    position: absolute;
+    top: unset;
+    left: unset;
+    cursor: none;
+}
+
+.followMe {
+    transform: translate(-50%, -90%);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.orange {
+    /* background-color: darkorange; */
+    background-color: mediumaquamarine;
+}
+
+.green-apple {
+    /* background-color: rgb(114, 179, 84); */
+    background-color: gold;
+}
+
+.checker img, .logo img {
+    height: 100%;
+    width: auto;
+}
+
+img {
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+/* ----------- */
+
+#board {
+    display: flex;
+    /* padding: 20px; */
+    /* padding-top: 150px; */
+    margin-top: 120px;
+    border: 15px darkblue solid;
+    border-radius: 50px;
+    z-index: 1;
+    cursor: none;
+}
+
+.column {
+    /* cursor: url('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/60/openmoji/213/downwards-black-arrow_2b07.png') 32 0, pointer; */
+    cursor: pointer;
+}
+
+/* transparent hole: */
+
+.slot {
+    box-sizing: content-box;
+    width: 100px;
+    height: 100px;
+    /* background-color: darkblue; */
+    overflow: hidden;
+}
+
+.hole {
+    box-sizing: content-box;
+    transform: translate(-25px, -25px);
+    width: 90px;
+    height: 90px;
+    /* background-color: rgb(114, 179, 84); */
+    border-radius: 50%;
+    border: 30px darkblue solid;
+}
+
+.player1 {
+    background-color: gold;
+    background-image: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/233/green-apple_1f34f.png");
+}
+
+.player2 {
+    background-color: mediumaquamarine;
+    background-image: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/233/tangerine_1f34a.png");
+}
+
+.player1, .player2 {
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.winner {
+    position: absolute;
+    top: -240px;
+    width: 100%;
+    height: 240px;
+    /* background-color: darkblue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    transition: 1s;
+}
+
+.on {
+    transition-property: transform;
+    transform: translateY(100%);
+}
+
+.wins {
+    padding-left: 30px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#apple-wins {
+    background-color: gold;
+    color: rgb(114, 179, 84);
+}
+
+#orange-wins {
+    background-color: mediumaquamarine;
+    color: darkorange;
+}
+
+.winner .logo {
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-box {
+    padding-left: 100px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    border: 3px solid darkblue;
+    color: darkblue;
+    font-weight: bold;
+    font-size: 26px;
+    padding: 10px;
+    cursor: pointer;
+
+    transition-duration: 0.4s;
+}
+
+#apple-wins .button:hover {
+    color: gold;
+    background-color: darkblue;
+}
+
+#orange-wins .button:hover {
+    color: mediumaquamarine;
+    background-color: darkblue;
+}
+
+.button:active {
+  transform: translateY(3px);
+}
