@@ -30,22 +30,8 @@
         //the slot we just put the piece in is in index i where previous loop broke
         var slotsInRow = $(".row" + i);
 
-        // ----WAYS TO GET DIAGONAL SLOTS TO CHECK:
-        // 1) X
-
-        // 2) loop through all 42 slots and check 3 up and right or down and right navigating by increasing column number and row number...inefficient
-
-        // 3) +7 /+5 (check difference of 1 between their column indices)
-
-        // 4) hardcode (canned) list of possible diagonal win situations
-        // var victories = [
-        //     [0,7,14,21], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []
-        // ];
-        // var slots = $('.slot');
-
-        // loop through victories
-
-        // 5) column - row for every slot; column + row for every slot:
+        // GET DIAGONAL SLOTS TO CHECK:
+        // column - row for every slot; column + row for every slot:
 
         //column index - row index for every slot
         //
@@ -190,21 +176,6 @@
             top: positionY + "px",
             left: positionX + "px",
         });
-
-        //either apple or orange follow cursor:
-        // if (currentPlayer == "player1") {
-        //     checker1.addClass('followMe');
-        //     checker1.css({
-        //         top: positionY + "px",
-        //         left: positionX + "px",
-        //     });
-        // } else {
-        //     checker2.addClass('followMe');
-        //     checker2.css({
-        //         top: positionY + "px",
-        //         left: positionX + "px",
-        //     });
-        // }
     }
 
     function followMouse(event) {
